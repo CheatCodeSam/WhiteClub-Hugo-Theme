@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="main">
+
+  {{ partial "slideshow.html" . }}
+
+  <div class="row">
+    <div class="col-md-7">
+        {{ .Content }}
+    </div>
+
+    <div class="col-md-5">
+      <h3>Próximas Actividades</h3>
+      <ul>
+        {{ range where .Pages.ByDate "Params.layout" "actividad" }}
+          {{ if now.Before (time .Params.startDate) }}
+            <li><span>{{ dateFormat "02 Jan 2006" .Params.startDate }}</span> &raquo; <a href="{{ .URL }}">{{ .Title }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      <p><a href="/activities" class="button">Ver las actividades</a></p>
+	    <h3>Blog</h3>
+      <ul>
+        {{ range first 3 (where .Pages "Params.layout" "post") }}
+          <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+      <p><a href="/blog" class="button">Ver blog</a></p>
+    </div>
+  </div>
+</div>
+{{ end }}
