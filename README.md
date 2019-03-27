@@ -1,7 +1,11 @@
 # Whiteclub Hugo theme
 
+---
 ![Inicio página](https://whiteclub.radio.clubs.etsit.upm.es/hugo-theme/1.png)
+---
 ![Seccion actividades](https://whiteclub.radio.clubs.etsit.upm.es/hugo-theme/2.png)
+
+---
 
 Hugo Theme specially developed for communities, HackLabs, clubs, etc.
 
