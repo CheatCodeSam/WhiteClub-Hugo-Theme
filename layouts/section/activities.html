@@ -26,7 +26,7 @@
       <div class="col-md-6">
     	<h2>Calendario de actividades</h2>
       <p><a href="{{ .Site.Params.activities.calendarPublicURL }}"> Subscríbete a nuestro calendario </a> para estar siempre informado de todas las actividades que realizamos en el RadioClub, de las actividades de interés en la ETSIT UPM y de las activades de Radio de la zona!</p>
-      <iframe src="{{ .Site.Params.activities.calendarIframeSrc }}" style="border-width:0" width="500" height="400" frameborder="0" scrolling="no"></iframe>
+      {{ .Site.Params.activities.calendarIframe | safeHTML}}
       </p>
       </div>
     </div>
