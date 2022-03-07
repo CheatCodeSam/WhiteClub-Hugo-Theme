@@ -20,7 +20,9 @@
   <link rel='icon' type='image/x-icon' href="{{ . | absURL }}" />
   {{- end }}
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:url" content="{{ .URL | absURL }}" />
+  {{- if .URL}}
+  <meta property="og:url" content="{{ . | absURL }}" />
+  {{- end }}
   {{- if .IsPage }}
   <meta property="og:type" content="article" />
   {{- else }}
